@@ -17,11 +17,23 @@ function Browser({ url, children }: { url: string; children: ReactNode }) {
 export function MockStrona() {
     return (
         <Browser url='twoja-strona.pl'>
-            <div className='flex h-full flex-col items-center justify-center gap-3'>
-                <div className='h-6 w-48 rounded-full bg-[#f7bc0a]/40' />
-                <div className='h-4 w-64 rounded-full bg-gray-200' />
-                <div className='h-4 w-56 rounded-full bg-gray-200' />
-                <div className='mt-4 h-10 w-32 rounded-full bg-[#f7bc0a]' />
+            <div className='flex justify-between items-center mb-4'>
+                <div className='h-2.5 w-12 rounded-full bg-gray-300' />
+                <div className='flex flex-col gap-[3px]'>
+                    <div className='h-[2px] w-4 rounded-full bg-gray-300' />
+                    <div className='h-[2px] w-4 rounded-full bg-gray-300' />
+                    <div className='h-[2px] w-2.5 rounded-full bg-gray-300' />
+                </div>
+            </div>
+            <div className='flex items-stretch justify-center gap-6 mt-auto pt-6'>
+                <div className='flex flex-col items-start gap-3'>
+                    <div className='h-2.5 w-24 rounded-full bg-gray-800' />
+                    <div className='h-2 w-48 rounded-full bg-gray-200' />
+                    <div className='h-2 w-40 rounded-full bg-gray-200' />
+                    <div className='h-2 w-44 rounded-full bg-gray-200' />
+                    <div className='mt-2 h-4 w-16 rounded-full bg-[#f7bc0a]' />
+                </div>
+                <div className='w-24 shrink-0 rounded-xl bg-gray-100' />
             </div>
         </Browser>
     );
@@ -30,29 +42,46 @@ export function MockStrona() {
 export function MockSklep() {
     return (
         <Browser url='twoj-sklep.pl'>
-            <div className='mb-4 flex justify-between'>
+            <div className='mb-3 flex items-center justify-between'>
                 <div className='h-3 w-20 rounded-full bg-gray-300' />
-                <div className='flex gap-2'>
+                <div className='flex items-center gap-2'>
                     <div className='h-3 w-12 rounded-full bg-gray-200' />
                     <div className='h-3 w-12 rounded-full bg-gray-200' />
-                    <div className='h-3 w-6 rounded-full bg-gray-200' />
+                    <div className='relative'>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#374151" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        <div className='absolute -top-1 -right-1 flex h-3 w-3 items-center justify-center rounded-full bg-[#f7bc0a] text-[6px] font-bold text-black'>2</div>
+                    </div>
                 </div>
             </div>
-            <div className='grid grid-cols-3 gap-3'>
-                {[0, 1, 2].map(i => (
-                    <div key={i} className='overflow-hidden rounded-xl bg-white shadow-sm'>
-                        <div className='flex h-16 items-center justify-center bg-gray-100'>
-                            <div className='h-8 w-8 rounded-full bg-[#f7bc0a]/30' />
-                        </div>
-                        <div className='p-2'>
-                            <div className='mb-1 h-2 w-full rounded-full bg-gray-200' />
-                            <div className='flex items-center justify-between'>
-                                <div className='h-2 w-10 rounded-full bg-[#f7bc0a]/60' />
-                                <div className='h-5 w-5 rounded-full bg-[#f7bc0a]' />
+            <div className='overflow-hidden'>
+                <div className='grid grid-cols-3 gap-2 mb-2'>
+                    {[0, 1, 2].map(i => (
+                        <div key={i} className='overflow-hidden rounded-xl bg-white shadow-sm'>
+                            <div className='flex h-16 items-center justify-center bg-gray-100'>
+                                <div className='h-6 w-6 rounded-full bg-[#f7bc0a]/30' />
+                            </div>
+                            <div className='p-1.5'>
+                                <div className='mb-1 h-2 w-full rounded-full bg-gray-200' />
+                                <div className='flex items-center justify-between'>
+                                    <div className='h-2 w-8 rounded-full bg-[#f7bc0a]/60' />
+                                    <div className='h-4 w-4 rounded-full bg-[#f7bc0a]' />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
+                <div className='grid grid-cols-3 gap-2 h-20 overflow-hidden'>
+                    {[0, 1, 2].map(i => (
+                        <div key={i} className='overflow-hidden rounded-xl bg-white shadow-sm'>
+                            <div className='flex h-16 items-center justify-center bg-gray-100'>
+                                <div className='h-6 w-6 rounded-full bg-[#f7bc0a]/30' />
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </Browser>
     );
@@ -60,12 +89,10 @@ export function MockSklep() {
 
 export function MockAppMobilna() {
     return (
-        <div className='flex justify-center'>
-            <div className='relative w-44 overflow-hidden rounded-[2.5rem] border-4 border-gray-800 bg-white shadow-2xl'>
-                <div className='flex justify-center bg-gray-800 py-2'>
-                    <div className='h-3 w-16 rounded-full bg-gray-700' />
-                </div>
-                <div className='min-h-[220px] bg-gray-50 p-3'>
+        <div className='flex h-[300px] items-center justify-center gap-4'>
+            {/* Telefon */}
+            <div className='relative w-[130px] overflow-hidden rounded-[1.5rem] border-4 border-gray-300 bg-white shadow-2xl'>
+                <div className='h-[268px] bg-gray-50 p-3'>
                     <div className='mb-3 flex justify-between px-1'>
                         <div className='h-2 w-8 rounded-full bg-gray-300' />
                         <div className='flex gap-1'>
@@ -73,7 +100,7 @@ export function MockAppMobilna() {
                             <div className='h-2 w-4 rounded-full bg-gray-300' />
                         </div>
                     </div>
-                    <div className='mb-3 flex h-20 items-center justify-center rounded-2xl bg-[#f7bc0a]/20'>
+                    <div className='mb-3 flex h-16 items-center justify-center rounded-2xl bg-[#f7bc0a]/20'>
                         <div className='h-8 w-8 rounded-full bg-[#f7bc0a]' />
                     </div>
                     <div className='mb-2 grid grid-cols-2 gap-2'>
@@ -90,6 +117,33 @@ export function MockAppMobilna() {
                             <div key={i} className={`h-4 w-4 rounded-md ${i === 0 ? 'bg-[#f7bc0a]' : 'bg-gray-200'}`} />
                         ))}
                     </div>
+                </div>
+            </div>
+            {/* Tablet pionowy */}
+            <div className='relative w-[190px] overflow-hidden rounded-[1.5rem] border-4 border-gray-300 bg-white shadow-xl'>
+                <div className='h-[268px] bg-gray-50 p-3'>
+                    <div className='mb-3 flex justify-between px-1'>
+                        <div className='h-2 w-12 rounded-full bg-gray-300' />
+                        <div className='flex gap-1.5'>
+                            <div className='h-2 w-6 rounded-full bg-gray-200' />
+                            <div className='h-2 w-6 rounded-full bg-gray-200' />
+                        </div>
+                    </div>
+                    <div className='mb-3 flex h-20 items-center justify-center rounded-2xl bg-[#f7bc0a]/20'>
+                        <div className='h-10 w-10 rounded-full bg-[#f7bc0a]' />
+                    </div>
+                    <div className='mb-2 grid grid-cols-3 gap-2'>
+                        {[0, 1, 2].map(i => (
+                            <div key={i} className='flex flex-col gap-1.5 rounded-xl bg-white p-2 shadow-sm'>
+                                <div className='h-4 w-4 rounded-md bg-[#f7bc0a]/40' />
+                                <div className='h-2 w-full rounded-full bg-gray-200' />
+                                <div className='h-2 w-2/3 rounded-full bg-gray-100' />
+                            </div>
+                        ))}
+                    </div>
+                    <div className='h-2.5 w-full rounded-full bg-gray-200' />
+                    <div className='mt-2 h-2.5 w-4/5 rounded-full bg-gray-200' />
+                    <div className='mt-3 h-7 w-24 rounded-full bg-[#f7bc0a]' />
                 </div>
             </div>
         </div>
@@ -168,24 +222,22 @@ export function MockPozycjonowanie() {
 
 export function MockSocialMedia() {
     return (
-        <div className='flex justify-center gap-4'>
-            <div className='relative w-36 overflow-hidden rounded-[2rem] border-4 border-gray-800 bg-white shadow-2xl'>
-                <div className='flex justify-center bg-gray-800 py-1.5'>
-                    <div className='h-2.5 w-12 rounded-full bg-gray-700' />
-                </div>
-                <div className='min-h-[200px] bg-white p-2'>
+        <div className='flex h-[300px] items-center justify-center gap-4'>
+            {/* Telefon */}
+            <div className='relative w-[130px] overflow-hidden rounded-[1.5rem] border-4 border-gray-300 bg-white shadow-2xl'>
+                <div className='h-[268px] bg-white p-2'>
                     <div className='mb-2 flex gap-1.5 overflow-hidden'>
                         {[0, 1, 2, 3].map(i => (
                             <div key={i} className={`h-8 w-8 shrink-0 rounded-full border-2 ${i === 0 ? 'border-[#f7bc0a]' : 'border-gray-200'} bg-gray-100`} />
                         ))}
                     </div>
-                    {[0, 1].map(i => (
+                    {[0, 1, 2].map(i => (
                         <div key={i} className='mb-2 overflow-hidden rounded-xl bg-gray-50'>
                             <div className='flex items-center gap-1.5 p-1.5'>
                                 <div className='h-4 w-4 rounded-full bg-gray-300' />
                                 <div className='h-2 w-16 rounded-full bg-gray-300' />
                             </div>
-                            <div className={`h-16 ${i === 0 ? 'bg-[#f7bc0a]/20' : 'bg-gray-200'}`} />
+                            <div className={`h-12 ${i === 0 ? 'bg-[#f7bc0a]/20' : 'bg-gray-200'}`} />
                             <div className='flex gap-2 px-2 py-1.5'>
                                 <div className='h-2.5 w-2.5 rounded-full bg-red-400' />
                                 <div className='h-2.5 w-2.5 rounded-full bg-gray-300' />
@@ -195,13 +247,14 @@ export function MockSocialMedia() {
                     ))}
                 </div>
             </div>
+            {/* Panel statystyk */}
             <div className='flex flex-col justify-center gap-3'>
                 {[
-                    { label: 'Zasięg', color: 'bg-[#f7bc0a]' },
-                    { label: 'Polubienia', color: 'bg-pink-400' },
-                    { label: 'Obserwujący', color: 'bg-green-400' },
-                ].map(stat => (
-                    <div key={stat.label} className='flex items-center gap-3 rounded-xl bg-white px-3 py-2 shadow-sm'>
+                    { color: 'bg-[#f7bc0a]' },
+                    { color: 'bg-pink-400' },
+                    { color: 'bg-green-400' },
+                ].map((stat, i) => (
+                    <div key={i} className='flex items-center gap-3 rounded-xl bg-white px-3 py-2 shadow-sm'>
                         <div className={`h-2 w-2 rounded-full ${stat.color}`} />
                         <div className='flex flex-col gap-1'>
                             <div className='h-2 w-14 rounded-full bg-gray-200' />
