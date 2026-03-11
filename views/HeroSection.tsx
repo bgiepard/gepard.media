@@ -44,7 +44,7 @@ export default function HeroSection() {
             <NavHeader />
             <div className='mx-auto flex w-full max-w-[1200px] items-center gap-16 px-3'>
 
-                <div className='flex-1'>
+                <div className='w-1/2 flex-1'>
                     <h1 className='text-8xl font-extrabold text-black flex flex-col gap-8'>
                         <span>Twój pomysł.</span>
                         <span>Nasza prędkość.</span>
@@ -61,7 +61,7 @@ export default function HeroSection() {
                 </div>
 
                 <div
-                    className='hidden flex-1 flex-col gap-4 md:flex'
+                    className='w-1/2 hidden flex-1 flex-col gap-4 md:flex'
                     onMouseEnter={() => setPaused(true)}
                     onMouseLeave={() => setPaused(false)}
                 >
@@ -70,20 +70,25 @@ export default function HeroSection() {
                             <Mock />
                         </div>
                     </div>
-                    <div className='flex flex-wrap gap-3'>
-                        {tabs.map((tab, i) => (
-                            <button
-                                key={tab.label}
-                                onClick={() => setActive(i)}
-                                className={`rounded-full border-2 px-5 py-2 text-sm font-semibold transition-colors ${
-                                    active === i
-                                        ? 'border-black bg-black text-white'
-                                        : 'border-black/20 text-black hover:border-black/50'
-                                }`}
-                            >
-                                {tab.label}
-                            </button>
-                        ))}
+                    <div className='overflow-hidden [mask-image:linear-gradient(to_right,black_60%,transparent_100%)]'>
+                        <div className='flex gap-3'>
+                            {[...tabs.slice(active), ...tabs.slice(0, active), ...tabs.slice(active), ...tabs.slice(0, active)].map((tab, i) => {
+                                const originalIndex = tabs.indexOf(tab);
+                                return (
+                                    <button
+                                        key={i === 0 ? `${tab.label}-${active}` : `${tab.label}-${i}`}
+                                        onClick={() => setActive(originalIndex)}
+                                        className={`shrink-0 rounded-full border-2 px-5 py-2 text-sm font-semibold transition-colors ${
+                                            i === 0
+                                                ? 'animate-slide-in border-black bg-black text-white'
+                                                : 'border-black/20 text-black hover:border-black/50'
+                                        }`}
+                                    >
+                                        {tab.label}
+                                    </button>
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
 
