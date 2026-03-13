@@ -1,5 +1,5 @@
-import HeroSection from '@/views/HeroSection';
+import HeroVariantC from '@/views/HeroVariantC';
 
 export default function Home() {
-    return <HeroSection />;
+    return <HeroVariantC />;
 }
