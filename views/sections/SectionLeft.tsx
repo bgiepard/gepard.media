@@ -26,7 +26,7 @@ export default function SectionLeft({ section, total, goTo }: Props) {
                 <MetaBalls
                     color='#000000'
                     cursorBallColor='#000000'
-                    cursorBallSize={3}
+                    cursorBallSize={2}
                     ballCount={16}
                     animationSize={30}
                     enableTransparency={true}
@@ -34,7 +34,7 @@ export default function SectionLeft({ section, total, goTo }: Props) {
                     speed={0.05}
                 />
             </div>
-            <div className='relative z-10 flex w-[600px] flex-col justify-center pr-12'>
+            <div className='relative z-10 flex w-[600px] flex-col justify-center mr-12'>
                 <h1 className='flex flex-col gap-4 leading-none text-black'>
                     <span
                         className='text-[5rem] font-extrabold leading-[0.85]'

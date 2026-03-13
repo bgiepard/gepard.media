@@ -9,13 +9,13 @@ interface Props {
 
 export default function MockVariantB({ tabs, active, setActive, Mock }: Props) {
     return (
-        <div className='flex h-full flex-col justify-center px-14 py-16'>
+        <div className='flex h-full flex-col items-center justify-center px-14 py-24'>
             <div className='flex w-full max-w-[600px] flex-col gap-8'>
 
                 {/* Nagłówek sekcji */}
                 <div>
-                    <p className='text-xs font-bold uppercase tracking-widest text-white/20'>Co robimy</p>
-                    <h2 className='mt-1 text-2xl font-extrabold text-white'>Tworzymy cyfrowe produkty,<br />które działają.</h2>
+                    <p className='text-xs font-bold uppercase tracking-widest text-white/30'>Usługi</p>
+                    <h2 className='mt-3 text-4xl font-extrabold text-white'>Przyspiesz z nami<br /><span className='text-[#f7bc0a]'>Twój</span> biznes.</h2>
                 </div>
 
                 {/* Górny rząd: zakładki po lewej + mock po prawej */}

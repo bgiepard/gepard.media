@@ -3,10 +3,11 @@ import { useFullPageScroll } from '@/hooks/useFullPageScroll';
 import SectionLeft from '@/views/sections/SectionLeft';
 import SectionMocks from '@/views/sections/SectionMocks';
 import SectionRealizacje from '@/views/sections/SectionRealizacje';
+import SectionReferencje from '@/views/sections/SectionReferencje';
 import SectionProces from '@/views/sections/SectionProces';
 import SectionCta from '@/views/sections/SectionCta';
 
-const SECTIONS = 4;
+const SECTIONS = 5;
 
 export default function HeroVariantC() {
     const { current: section, goTo, duration } = useFullPageScroll(SECTIONS);
@@ -26,6 +27,7 @@ export default function HeroVariantC() {
                     }}
                 >
                     <SectionMocks />
+                    <SectionReferencje />
                     <SectionRealizacje />
                     <SectionProces />
                     <SectionCta />
