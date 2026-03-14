@@ -7,7 +7,7 @@ import {
     MockPozycjonowanie,
     MockSocialMedia,
 } from '@/components/HeroMocks';
-import MockVariantB from './mocks/MockVariantB';
+import MockVariantB3 from './mocks/MockVariantB3';
 
 export type Tab = {
     label: string;
@@ -16,12 +16,12 @@ export type Tab = {
 };
 
 const tabs: Tab[] = [
-    { label: 'Strony www', mock: MockStrona, desc: 'Projektujemy i wdrażamy szybkie, nowoczesne strony dopasowane do Twojej marki i celów biznesowych. Każda strona jest w pełni responsywna i zoptymalizowana pod kątem SEO. Dbamy o to, żeby nie tylko dobrze wyglądała, ale przede wszystkim konwertowała.' },
-    { label: 'Sklepy e-commerce', mock: MockSklep, desc: 'Tworzymy sklepy internetowe z intuicyjnym UX, który prowadzi klienta prosto do kasy. Integrujemy popularne bramki płatności, systemy magazynowe i narzędzia analityczne. Twój sklep będzie gotowy na sprzedaż od pierwszego dnia.' },
-    { label: 'Aplikacje mobilne', mock: MockAppMobilna, desc: 'Budujemy natywne i hybrydowe aplikacje na iOS i Android – od pomysłu przez projekt aż po wdrożenie w App Store i Google Play. Stawiamy na wydajność, intuicyjność i spójny design. Tworzymy aplikacje, z których ludzie chcą korzystać.' },
-    { label: 'Web design', mock: MockWebDesign, desc: 'Projektujemy interfejsy w Figma – makiety, interaktywne prototypy i kompletne systemy designu spójne z Twoją marką. Każdy projekt poprzedzamy analizą potrzeb użytkowników i warsztatami z klientem. Efekt? Design, który wygląda świetnie i działa jeszcze lepiej.' },
-    { label: 'Pozycjonowanie', mock: MockPozycjonowanie, desc: 'Przeprowadzamy szczegółowe audyty SEO i wdrażamy optymalizację techniczną, która realnie wpływa na pozycje w Google. Łączymy działania on-site z content marketingiem, który przyciąga wartościowy ruch. Stawiamy na długoterminowe efekty, nie sztuczki.' },
-    { label: 'Social media', mock: MockSocialMedia, desc: 'Budujemy strategię obecności w mediach społecznościowych dopasowaną do Twojej grupy docelowej i celów marki. Tworzymy angażujące treści, grafiki i kampanie na Instagramie, Facebooku i LinkedIn. Ty skupiasz się na biznesie – my dbamy o zasięgi i społeczność.' },
+    { label: 'Strony www',        mock: MockStrona,         desc: 'Projektujemy i wdrażamy szybkie, nowoczesne strony dopasowane do Twojej marki i celów biznesowych. Każda strona jest w pełni responsywna i zoptymalizowana pod kątem SEO. Dbamy o to, żeby nie tylko dobrze wyglądała, ale przede wszystkim konwertowała.' },
+    { label: 'Sklepy e-commerce', mock: MockSklep,          desc: 'Tworzymy sklepy internetowe z intuicyjnym UX, który prowadzi klienta prosto do kasy. Integrujemy popularne bramki płatności, systemy magazynowe i narzędzia analityczne. Twój sklep będzie gotowy na sprzedaż od pierwszego dnia.' },
+    { label: 'Aplikacje mobilne', mock: MockAppMobilna,     desc: 'Budujemy natywne i hybrydowe aplikacje na iOS i Android – od pomysłu przez projekt aż po wdrożenie w App Store i Google Play. Stawiamy na wydajność, intuicyjność i spójny design. Tworzymy aplikacje, z których ludzie chcą korzystać.' },
+    { label: 'Web design',        mock: MockWebDesign,      desc: 'Projektujemy interfejsy w Figma – makiety, interaktywne prototypy i kompletne systemy designu spójne z Twoją marką. Każdy projekt poprzedzamy analizą potrzeb użytkowników i warsztatami z klientem. Efekt? Design, który wygląda świetnie i działa jeszcze lepiej.' },
+    { label: 'Pozycjonowanie',    mock: MockPozycjonowanie, desc: 'Przeprowadzamy szczegółowe audyty SEO i wdrażamy optymalizację techniczną, która realnie wpływa na pozycje w Google. Łączymy działania on-site z content marketingiem, który przyciąga wartościowy ruch. Stawiamy na długoterminowe efekty, nie sztuczki.' },
+    { label: 'Social media',      mock: MockSocialMedia,    desc: 'Budujemy strategię obecności w mediach społecznościowych dopasowaną do Twojej grupy docelowej i celów marki. Tworzymy angażujące treści, grafiki i kampanie na Instagramie, Facebooku i LinkedIn. Ty skupiasz się na biznesie – my dbamy o zasięgi i społeczność.' },
 ];
 
 const INTERVAL = 4000;
@@ -47,7 +47,7 @@ export default function SectionMocks() {
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
         >
-            <MockVariantB tabs={tabs} active={active} setActive={setActive} Mock={Mock} />
+            <MockVariantB3 tabs={tabs} active={active} setActive={setActive} Mock={Mock} />
         </div>
     );
 }
